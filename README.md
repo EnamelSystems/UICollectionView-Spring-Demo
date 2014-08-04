@@ -3,7 +3,7 @@ UICollectionView-Spring-Demo
 A demonstration of UICollectionView and UIKit Dynamics. Uses tiling in order to maintain high-performance even with ten thousand cells.
 
 ## Swift version
-This is forked repository just for adding Swift version of implementation.  Please check `TLSpringFlowLayoutSwift.swift` for who prefer Swift over Objective-C.
+This is forked repository just for adding Swift version of implementation.  Please check `TLSpringFlowLayoutSwift.swift` who prefer Swift over Objective-C.
 
 ## Demo
 ![Animation](http://f.cl.ly/items/161u2F0U383G0f0c3h3j/animation.gif)
