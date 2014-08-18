@@ -24,7 +24,7 @@ class TLSpringFlowLayoutSwift: UICollectionViewFlowLayout {
     var latestDelta: CGFloat
     var interfaceOrientation: UIInterfaceOrientation
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         self.visibleIndexPathsSet = NSMutableSet()
         self.visibleHeaderAndFooterSet = NSMutableSet()
         self.latestDelta = 0.0
@@ -88,7 +88,7 @@ class TLSpringFlowLayoutSwift: UICollectionViewFlowLayout {
                     let distanceFromTouch: CGFloat = abs(touchLocation.y - springBehaviour.anchorPoint.y)
 
                     var scrollResistance: CGFloat
-                    if self.scrollResistanceFactor {
+                    if self.scrollResistanceFactor != nil {
                         scrollResistance = distanceFromTouch / self.scrollResistanceFactor;
                     } else {
                         scrollResistance = distanceFromTouch / kScrollResistanceFactorDefault;
@@ -105,7 +105,7 @@ class TLSpringFlowLayoutSwift: UICollectionViewFlowLayout {
                     let distanceFromTouch: CGFloat = abs(touchLocation.x - springBehaviour.anchorPoint.x)
                     
                     var scrollResistance: CGFloat
-                    if self.scrollResistanceFactor {
+                    if self.scrollResistanceFactor != nil {
                         scrollResistance = distanceFromTouch / self.scrollResistanceFactor;
                     } else {
                         scrollResistance = distanceFromTouch / kScrollResistanceFactorDefault;
@@ -139,7 +139,7 @@ class TLSpringFlowLayoutSwift: UICollectionViewFlowLayout {
         let dynamicLayoutAttributes: UICollectionViewLayoutAttributes! = self.dynamicAnimator.layoutAttributesForCellAtIndexPath(indexPath)
 
         // Check if dynamic animator has layout attributes for a layout, otherwise use the flow layouts properties. This will prevent crashing when you add items later in a performBatchUpdates block (e.g. triggered by NSFetchedResultsController update)
-        if dynamicLayoutAttributes {
+        if dynamicLayoutAttributes != nil {
             return dynamicLayoutAttributes
         } else {
             return super.layoutAttributesForItemAtIndexPath(indexPath)
@@ -167,7 +167,7 @@ class TLSpringFlowLayoutSwift: UICollectionViewFlowLayout {
                 var distanceFromTouch: CGFloat = abs(touchLocation.y - springBehaviour.anchorPoint.y)
 
                 var scrollResistance: CGFloat
-                if self.scrollResistanceFactor {
+                if self.scrollResistanceFactor != nil {
                     scrollResistance = distanceFromTouch / self.scrollResistanceFactor
                 } else {
                     scrollResistance = distanceFromTouch / kScrollResistanceFactorDefault;
@@ -188,7 +188,7 @@ class TLSpringFlowLayoutSwift: UICollectionViewFlowLayout {
                 var distanceFromTouch: CGFloat = abs(touchLocation.x - springBehaviour.anchorPoint.x)
                 
                 var scrollResistance: CGFloat
-                if self.scrollResistanceFactor {
+                if self.scrollResistanceFactor != nil {
                     scrollResistance = distanceFromTouch / self.scrollResistanceFactor
                 } else {
                     scrollResistance = distanceFromTouch / kScrollResistanceFactorDefault;
